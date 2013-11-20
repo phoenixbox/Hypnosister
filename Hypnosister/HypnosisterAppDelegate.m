@@ -16,10 +16,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:[[self window] bounds]];
+    CGRect screenRect = [[self window]bounds];
     
-    [[self window] addSubview:view];
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:screenRect];
+    [[self window]addSubview:scrollView];
     
+    CGRect bigRect = screenRect;
+    bigRect.size.width *=2.0;
+    bigRect.size.height *=2.0;
+    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:bigRect];
+    
+    [scrollView addSubview:view];
+    
+    [scrollView setContentSize:bigRect.size];
+                      
     BOOL success = [view becomeFirstResponder];
     if(success){
         NSLog(@"Hypnosister view became the first responder");
