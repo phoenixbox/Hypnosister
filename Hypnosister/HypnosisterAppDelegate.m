@@ -17,13 +17,10 @@
     // Override point for customization after application launch.
 
     CGRect viewFrame = CGRectMake(160, 240, 100, 150);
-    CGRect viewFrameTwo = CGRectMake(20, 100, 40, 120);
+    CGRect viewFrameTwo = CGRectMake(20, 30, 50, 50);
     
     HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:viewFrame];
     HypnosisterView *anotherView = [[HypnosisterView alloc]initWithFrame:viewFrameTwo];
-    
-    [anotherView setBackgroundColor:[UIColor grayColor]];
-    [view setBackgroundColor:[UIColor cyanColor]];
     
     [[self window] addSubview:view];
     [view addSubview:anotherView];
