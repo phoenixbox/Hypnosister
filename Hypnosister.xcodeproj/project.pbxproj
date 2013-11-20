@@ -19,6 +19,7 @@
 		CBBF33A4183BB9B30033A562 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBF338C183BB9B30033A562 /* UIKit.framework */; };
 		CBBF33AC183BB9B30033A562 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBBF33AA183BB9B30033A562 /* InfoPlist.strings */; };
 		CBBF33AE183BB9B30033A562 /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF33AD183BB9B30033A562 /* HypnosisterTests.m */; };
+		CBBF33B9183BBD0B0033A562 /* HypnosisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF33B8183BBD0B0033A562 /* HypnosisterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		CBBF33A9183BB9B30033A562 /* HypnosisterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HypnosisterTests-Info.plist"; sourceTree = "<group>"; };
 		CBBF33AB183BB9B30033A562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBBF33AD183BB9B30033A562 /* HypnosisterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisterTests.m; sourceTree = "<group>"; };
+		CBBF33B7183BBD0B0033A562 /* HypnosisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisterView.h; sourceTree = "<group>"; };
+		CBBF33B8183BBD0B0033A562 /* HypnosisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				CBBF3397183BB9B30033A562 /* HypnosisterAppDelegate.h */,
 				CBBF3398183BB9B30033A562 /* HypnosisterAppDelegate.m */,
+				CBBF33B7183BBD0B0033A562 /* HypnosisterView.h */,
+				CBBF33B8183BBD0B0033A562 /* HypnosisterView.m */,
 				CBBF339A183BB9B30033A562 /* Images.xcassets */,
 				CBBF338F183BB9B30033A562 /* Supporting Files */,
 			);
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBBF3395183BB9B30033A562 /* main.m in Sources */,
+				CBBF33B9183BBD0B0033A562 /* HypnosisterView.m in Sources */,
 				CBBF3399183BB9B30033A562 /* HypnosisterAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
