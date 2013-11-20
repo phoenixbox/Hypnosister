@@ -54,6 +54,11 @@
             withFont:font];
 }
 
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

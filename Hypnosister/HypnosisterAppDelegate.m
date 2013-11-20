@@ -20,6 +20,13 @@
     
     [[self window] addSubview:view];
     
+    BOOL success = [view becomeFirstResponder];
+    if(success){
+        NSLog(@"Hypnosister view became the first responder");
+    } else {
+        NSLog(@"Could not become the first responder");
+    }
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
