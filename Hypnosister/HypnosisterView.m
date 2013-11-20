@@ -19,7 +19,7 @@
     center.x = bounds.origin.x + bounds.size.width / 2.0;
     center.y = bounds.origin.y + bounds.size.height / 2.0;
     
-    float maxRadius = hypot(bounds.size.width, bounds.size.height)/ 2.0;
+    float maxRadius = hypot(bounds.size.width, bounds.size.height)/ 4.0;
     
     CGContextSetLineWidth(ctx, 10);
     
@@ -30,4 +30,12 @@
     CGContextStrokePath(ctx);
 }
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self){
+        [self setBackgroundColor:[UIColor clearColor]];
+    }
+    return self;
+}
 @end
