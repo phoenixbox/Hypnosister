@@ -23,7 +23,8 @@
     
     CGContextSetLineWidth(ctx, 10);
     
-    CGContextSetRGBStrokeColor(ctx, 0.6, 0.6, 0.6, 1.0);
+//    [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1];
+    [[UIColor lightGrayColor]setStroke];
     
 //    CGContextAddArc(ctx, center.x, center.y, maxRadius, 0.0, M_PI * 2.0, YES);
     
