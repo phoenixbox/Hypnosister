@@ -23,10 +23,14 @@
     
     CGRect bigRect = screenRect;
     bigRect.size.width *=2.0;
-    bigRect.size.height *=2.0;
-    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:bigRect];
+
+    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:screenRect];
     
     [scrollView addSubview:view];
+    
+    screenRect.origin.x = screenRect.size.width;
+    HypnosisterView *anotherView = [[HypnosisterView alloc]initWithFrame:screenRect];
+    [scrollView addSubview:anotherView];
     
     [scrollView setContentSize:bigRect.size];
                       
