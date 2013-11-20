@@ -59,6 +59,17 @@
     return YES;
 }
 
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    [self setCircleColor:[UIColor redColor]];
+}
+
+-(void)setCircleColor:(UIColor *)clr
+{
+    circleColor = clr;
+    [self setNeedsDisplay];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
