@@ -15,19 +15,43 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-
-    CGRect viewFrame = CGRectMake(160, 240, 100, 150);
-    CGRect viewFrameTwo = CGRectMake(20, 30, 50, 50);
     
-    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:viewFrame];
-    HypnosisterView *anotherView = [[HypnosisterView alloc]initWithFrame:viewFrameTwo];
+    [[UIApplication sharedApplication]setStatusBarHidden:YES
+                                           withAnimation:UIStatusBarAnimationFade];
     
-    [[self window] addSubview:view];
-    [view addSubview:anotherView];
+    CGRect screenRect = [[self window]bounds];
+    
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:screenRect];
+    
+    [scrollView setMinimumZoomScale:1.0];
+    [scrollView setMaximumZoomScale:5.0];
+    
+    [scrollView setDelegate:self];
+    
+    [[self window]addSubview:scrollView];
+    
+    CGRect bigRect = screenRect;
+    view = [[HypnosisterView alloc]initWithFrame:screenRect];
+    
+    [scrollView addSubview:view];
+    
+    [scrollView setContentSize:bigRect.size];
+                      
+    BOOL success = [view becomeFirstResponder];
+    if(success){
+        NSLog(@"Hypnosister view became the first responder");
+    } else {
+        NSLog(@"Could not become the first responder");
+    }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return view;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
