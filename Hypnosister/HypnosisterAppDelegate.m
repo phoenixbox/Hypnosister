@@ -19,19 +19,18 @@
     CGRect screenRect = [[self window]bounds];
     
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:screenRect];
-    [scrollView setPagingEnabled:YES];
+    
+    [scrollView setMinimumZoomScale:1.0];
+    [scrollView setMaximumZoomScale:5.0];
+    
+    [scrollView setDelegate:self];
+    
     [[self window]addSubview:scrollView];
     
     CGRect bigRect = screenRect;
-    bigRect.size.width *=2.0;
-
-    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:screenRect];
+    view = [[HypnosisterView alloc]initWithFrame:screenRect];
     
     [scrollView addSubview:view];
-    
-    screenRect.origin.x = screenRect.size.width;
-    HypnosisterView *anotherView = [[HypnosisterView alloc]initWithFrame:screenRect];
-    [scrollView addSubview:anotherView];
     
     [scrollView setContentSize:bigRect.size];
                       
@@ -45,6 +44,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return view;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
