@@ -23,17 +23,34 @@
     
     CGContextSetLineWidth(ctx, 10);
     
-//    [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1];
     [[UIColor lightGrayColor]setStroke];
-    
-//    CGContextAddArc(ctx, center.x, center.y, maxRadius, 0.0, M_PI * 2.0, YES);
-    
-//    CGContextStrokePath(ctx);
     
     for (float currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20){
         CGContextAddArc(ctx, center.x, center.y, currentRadius, 0.0, M_PI * 2.0, YES);
         CGContextStrokePath(ctx);
     }
+    
+    NSString *text = @"You Are Getting Sleepy!";
+    
+    UIFont *font = [UIFont boldSystemFontOfSize:28];
+    
+    CGRect textRect;
+    
+    textRect.size = [text sizeWithFont:font];
+    
+    textRect.origin.x = center.x - textRect.size.width / 2.0;
+    textRect.origin.y = center.y - textRect.size.height / 2.0;
+    
+    [[UIColor blackColor] setFill];
+    
+    CGSize offset = CGSizeMake(4,3);
+    
+    CGColorRef color = [[UIColor darkGrayColor]CGColor];
+    
+    CGContextSetShadowWithColor(ctx, offset, 2.0, color);
+    
+    [text drawInRect:textRect
+            withFont:font];
 }
 
 - (id)initWithFrame:(CGRect)frame
