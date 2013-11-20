@@ -15,15 +15,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-
-    CGRect viewFrame = CGRectMake(160, 240, 100, 150);
-    CGRect viewFrameTwo = CGRectMake(20, 30, 50, 50);
     
-    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:viewFrame];
-    HypnosisterView *anotherView = [[HypnosisterView alloc]initWithFrame:viewFrameTwo];
+    HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:[[self window] bounds]];
     
     [[self window] addSubview:view];
-    [view addSubview:anotherView];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
