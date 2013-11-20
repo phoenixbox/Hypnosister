@@ -20,13 +20,13 @@
     CGRect viewFrameTwo = CGRectMake(20, 100, 40, 120);
     
     HypnosisterView *view = [[HypnosisterView alloc]initWithFrame:viewFrame];
-    HypnosisterView *viewTwo = [[HypnosisterView alloc]initWithFrame:viewFrameTwo];
+    HypnosisterView *anotherView = [[HypnosisterView alloc]initWithFrame:viewFrameTwo];
     
-    [viewTwo setBackgroundColor:[UIColor grayColor]];
+    [anotherView setBackgroundColor:[UIColor grayColor]];
     [view setBackgroundColor:[UIColor cyanColor]];
     
     [[self window] addSubview:view];
-    [[self window] addSubview:viewTwo];
+    [view addSubview:anotherView];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
