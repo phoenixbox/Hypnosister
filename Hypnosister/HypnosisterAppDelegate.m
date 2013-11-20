@@ -19,6 +19,7 @@
     CGRect screenRect = [[self window]bounds];
     
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:screenRect];
+    [scrollView setPagingEnabled:YES];
     [[self window]addSubview:scrollView];
     
     CGRect bigRect = screenRect;
