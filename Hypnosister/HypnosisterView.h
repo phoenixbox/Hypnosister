@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface HypnosisterView : UIView
+{
+
+}
+@property (nonatomic, strong) UIColor * circleColor;
 
 @end

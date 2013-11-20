@@ -9,6 +9,7 @@
 #import "HypnosisterView.h"
 
 @implementation HypnosisterView
+@synthesize circleColor;
 
 - (void)drawRect:(CGRect)dirtyRect
 {
@@ -23,7 +24,7 @@
     
     CGContextSetLineWidth(ctx, 10);
     
-    [[UIColor lightGrayColor]setStroke];
+    [[self circleColor] setStroke];
     
     for (float currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20){
         CGContextAddArc(ctx, center.x, center.y, currentRadius, 0.0, M_PI * 2.0, YES);
@@ -58,6 +59,7 @@
     self = [super initWithFrame:frame];
     if (self){
         [self setBackgroundColor:[UIColor clearColor]];
+        [self setCircleColor:[UIColor lightGrayColor]];
     }
     return self;
 }
